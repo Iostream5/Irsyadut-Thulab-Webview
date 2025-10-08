@@ -3,7 +3,7 @@
 
 <head>
    <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no shrink-to-fit=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
    <title>Irsyadut Thulab | Beranda</title>
    <meta name="description"
       content="Website yang menyediakan konten konten islami seperti Al-quran, Sunnah Nabi, Doa Sehari Hari, dll. Dengan desain yang sederhana dan mudah dinavigasi, website ini bertujuan untuk memberikan akses yang lebih luas kepada umat Islam dalam mempelajari, memahami, dan mengamalkan ajaran Islam." />
@@ -12,7 +12,7 @@
    <link rel="icon" href="../assets/icon/logo projek.ico" type="image/x-icon">
    <link rel="shortcut icon" href="../assets/logo.png" />
    <link rel="stylesheet" href="../assets/css/core/libs.min.css" />
-   <link rel="stylesheet" href="../assets/css/hope-ui.min.css?v=2.0.0" />
+   <link rel="stylesheet" href="../assets/css/hope-ui.min.css" />
    <link rel="stylesheet" href="../assets/css/custom.min.css?v=2.0.0" />
    <link rel="stylesheet" href="../assets/css/customizer.min.css" />
    <link rel="stylesheet" href="../assets/node_modules/sweetalert2/dist/sweetalert2.min.css">
@@ -77,7 +77,7 @@
    }
 </style>
 
-<body x-data x-init="$store.backController.init()" class="  ">
+<body x-data x-init="$store.backController.init()">
    <div id="loading">
       <div class="loader simple-loader">
          <div class="loader-body"></div>
@@ -86,7 +86,7 @@
    <aside id="body-sidebar" class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all">
       <script type="module" src="../components/body-sidebar.js"></script>
    </aside>
-   <main class="main-content overflow-hidden">
+   <main class="main-content">
       <div id="main-cs-btn" class="position-relative iq-banner">
          <script src="../components/main-cs-btn.js"></script>
          <nav id="body-nav" class="nav navbar navbar-expand-lg navbar-light iq-navbar sticky-top">
@@ -363,12 +363,12 @@
                title: 'Assalamualaikum',
                text: 'Mohon Bantu Kami Dengan Memberitahu Jika Ada Kesalahan Tulis🙏',
                confirmButtonText: 'Lanjut Ke Aplikasi'
-            })
+            }).then(() => {
+               localStorage.setItem('alertShown', 'true');
+            });
          }
       });
-      document.addEventListener('pause', function () {
-         localStorage.removeItem('alertShown');
-      });
+
    </script>
    <script>
       document.addEventListener('alpine:init', () => {
