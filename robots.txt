@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nama-domainmu.vercel.app/sitemap.xml
