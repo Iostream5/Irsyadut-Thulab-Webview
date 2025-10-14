@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nama-domainmu.vercel.app/sitemap.xml
+Sitemap: https://irsyadut-thulab-webview.vercel.app/sitemap.xml
